@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loading Your Surprise…</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Poppins", sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
+      background: linear-gradient(135deg, #ff9eb8, #ff74a8, #ff567d);
+      background-size: 300% 300%;
+      animation: bgFlow 8s ease infinite;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-top: 20px;
+      color: #fff;
+      text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+      animation: fadeIn 2s infinite alternate;
+    }
+
+    .small {
+      margin-top: 10px;
+      font-size: 1rem;
+      opacity: 0.8;
+      animation: fadeIn 2.5s infinite alternate;
+    }
+
+    .heart {
+      width: 130px;
+      height: 130px;
+      position: relative;
+      animation: heartbeat 1.2s infinite;
+      filter: drop-shadow(0 0 25px #f795bdcc);
+    }
+
+    .heart:before,
+    .heart:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 65px;
+      height: 100px;
+      background: #ff2d78;
+      border-radius: 65px 65px 0 0;
+    }
+
+    .heart:before {
+      left: 65px;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart:after {
+      left: 0;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(0.92); }
+      50% { transform: scale(1.10); }
+      100% { transform: scale(0.92); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0.5; transform: scale(0.97); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bgFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .floating-hearts {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+    }
+
+    .floating-hearts span {
+      position: absolute;
+      bottom: -50px;
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 20px;
+      animation: rise 6s linear infinite;
+    }
+
+    @keyframes rise {
+      0% {
+        transform: translateY(0) scale(0.8);
+        opacity: 0.5;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) scale(1.4);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="floating-hearts">
+    <span style="left: 10%;">❤️</span>
+    <span style="left: 25%; animation-delay: 1s;">💗</span>
+    <span style="left: 40%; animation-delay: 2s;">💕</span>
+    <span style="left: 55%; animation-delay: 1.5s;">💖</span>
+    <span style="left: 70%; animation-delay: 0.5s;">💘</span>
+    <span style="left: 85%; animation-delay: 2.5s;">💞</span>
+  </div>
+
+  <div class="heart"></div>
+
+  <h1>Loading Your Surprise…</h1>
+  <div class="small">Just hold on a moment ❤️</div>
+
+  <!-- AUTO REDIRECT SCRIPT -->
+  <script>
+    setTimeout(function() {
+      window.location.href = "index.html";   // Go to next page
+    }, 5000); // 5000 milliseconds = 5 seconds
+  </script>
+
+</body>
+</html>
+
